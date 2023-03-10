@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="refresh" content="180">
+		<title>Wow Graphics</title>
+		<style>
+			body { margin: 0; }
+		</style>
+	</head>
+	<body>
+		<script src="js/three.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js" integrity="sha512-yNJzAsg5JyP91u+sLHlUDULMBd3hmEiVkYeeN1cQBKaLZ7EyT6oH2u5THNIRM2Fu6VKcZJv+F/QAp1h/qzy9Ow==" crossorigin="anonymous"></script>
+        <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
+
+        
+		<script>
+			var scene = new THREE.Scene(); //Scene for Map of Earth 
+            var scene2 = new THREE.Scene(); //Scene for satellites
+
+            var camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 0.1, 1000 );
+            
+            //-tempate-
+            var renderer = new THREE.WebGLRenderer();
+            renderer.autoClear = false;
+            renderer.setSize( window.innerWidth, window.innerHeight );
+            document.body.appendChild( renderer.domElement );
+            //-template
+            //Altitude of Satellites predefined //
+
+            var zo = camera.getFocalLength();
+            console.log("This is the field of View" + zo);
+
+            var texture = new THREE.TextureLoader().load( 'https://res.cloudinary.com/witovah/image/upload/v1626009475/hypatia_lagze5.webp' );
+
+			var material = new THREE.MeshBasicMaterial( { map: texture } );
+            var circleGeometry = new THREE.CircleGeometry( 196, 70 );              
+            var circle = new THREE.Mesh( circleGeometry, material );
+            scene2.add( circle );
+            circle.position.y = -207;
+            camera.position.set(0, 0, 100);
+            camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
+
+
+            // instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433955/cubesat_iumcx0.png')
+            });
+            var geometry = new THREE.PlaneGeometry(10, 10);
+            // combine our image geometry and material into a mesh
+            var mesh1 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            mesh1.position.set(-180,-15,1)
+            // add the image to the scene
+            scene2.add(mesh1);
+
+            
+
+
+            // instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433955/cubesat_iumcx0.png')
+            });
+            var geometry = new THREE.PlaneGeometry(10, 10);
+            // combine our image geometry and material into a mesh
+            var mesh2 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            mesh2.position.set(-122,-2,1)
+            // add the image to the scene
+            scene2.add(mesh2);
+
+
+            // instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433955/cubesat_iumcx0.png')
+            });
+            var geometry = new THREE.PlaneGeometry(10, 10);
+            // combine our image geometry and material into a mesh
+            var mesh3 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            mesh3.position.set(-62,13,1)
+            // add the image to the scene
+            scene2.add(mesh3);
+
+
+            // instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433955/cubesat_iumcx0.png')
+            });
+            var geometry = new THREE.PlaneGeometry(10, 10);
+            // combine our image geometry and material into a mesh
+            var mesh4 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            mesh4.position.set(2,10,1)
+            // add the image to the scene
+            scene2.add(mesh4);
+
+
+            // instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433955/cubesat_iumcx0.png')
+            });
+            var geometry = new THREE.PlaneGeometry(10, 10);
+            // combine our image geometry and material into a mesh
+            var mesh5 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            mesh5.position.set(57,8,1)
+            // add the image to the scene
+            scene2.add(mesh5);
+
+
+
+            // instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433955/cubesat_iumcx0.png')
+            });
+            var geometry = new THREE.PlaneGeometry(10, 10);
+            // combine our image geometry and material into a mesh
+            var mesh6 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            mesh6.position.set(129, -4, 1)
+            // add the image to the scene
+            scene2.add(mesh6); 
+
+            
+
+
+            // instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433955/cubesat_iumcx0.png')
+            });
+            var geometry = new THREE.PlaneGeometry(10, 10);
+            // combine our image geometry and material into a mesh
+            var mesh7 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            mesh7.position.set(160, -4, 1)
+            // add the image to the scene
+            scene2.add(mesh7);
+
+
+            // instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433955/cubesat_iumcx0.png')
+            });
+            var geometry = new THREE.PlaneGeometry(10, 10);
+            // combine our image geometry and material into a mesh
+            var mesh8 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            mesh8.position.set(191, -15, 1)
+            // add the image to the scene
+            scene2.add(mesh8);
+
+
+             // instantiate a loader
+             var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433955/cubesat_iumcx0.png')
+            });
+            var geometry = new THREE.PlaneGeometry(10, 10);
+            // combine our image geometry and material into a mesh
+            var mesh9 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            mesh9.position.set(222, -26, 1)
+            // add the image to the scene
+            scene2.add(mesh9);
+
+
+
+            // instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433955/cubesat_iumcx0.png')
+            });
+            var geometry = new THREE.PlaneGeometry(10, 10);
+            // combine our image geometry and material into a mesh
+            var meshA1 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            meshA1.position.set(-160,85,1)
+            // add the image to the scene
+            scene2.add(meshA1);
+
+
+            // instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433955/cubesat_iumcx0.png')
+            });
+            var geometry = new THREE.PlaneGeometry(10, 10);
+            // combine our image geometry and material into a mesh
+            var meshA2 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            meshA2.position.set(-60,95,1)
+            // add the image to the scene
+            scene2.add(meshA2);
+
+
+            // instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433955/cubesat_iumcx0.png')
+            });
+            var geometry = new THREE.PlaneGeometry(10, 10);
+            // combine our image geometry and material into a mesh
+            var meshA3 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            meshA3.position.set(50,80,1)
+            // add the image to the scene
+            scene2.add(meshA3);
+
+
+            // instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433955/cubesat_iumcx0.png')
+            });
+            var geometry = new THREE.PlaneGeometry(10, 10);
+            // combine our image geometry and material into a mesh
+            var meshA4 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            meshA4.position.set(144,90,1)
+            // add the image to the scene
+            scene2.add(meshA4);
+
+
+            //instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433954/drone_yviy1a.png')
+            });
+            var geometry = new THREE.PlaneGeometry(5, 5);
+            // combine our image geometry and material into a mesh
+            var meshD1 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            meshD1.position.set(-140,-59,1)
+            // add the image to the scene
+            scene2.add(meshD1); 
+
+
+            //instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433954/drone_yviy1a.png')
+            });
+            var geometry = new THREE.PlaneGeometry(5, 5);
+            // combine our image geometry and material into a mesh
+            var meshD2 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            meshD2.position.set(-100,-30,1)
+            // add the image to the scene
+            scene2.add(meshD2); 
+
+
+            //instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433954/drone_yviy1a.png')
+            });
+            var geometry = new THREE.PlaneGeometry(5, 5);
+            // combine our image geometry and material into a mesh
+            var meshD3 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            meshD3.position.set(-80,-20,1)
+            // add the image to the scene
+            scene2.add(meshD3); 
+
+
+            //instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433954/drone_yviy1a.png')
+            });
+            var geometry = new THREE.PlaneGeometry(5, 5);
+            // combine our image geometry and material into a mesh
+            var meshD4 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            meshD4.position.set(-30,-7,1)
+            // add the image to the scene
+            scene2.add(meshD4);
+
+
+            //instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433954/drone_yviy1a.png')
+            });
+            var geometry = new THREE.PlaneGeometry(5, 5);
+            // combine our image geometry and material into a mesh
+            var meshD5 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            meshD5.position.set(4,-5,1)
+            // add the image to the scene
+            scene2.add(meshD5);
+
+
+
+            //instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433954/drone_yviy1a.png')
+            });
+            var geometry = new THREE.PlaneGeometry(5, 5);
+            // combine our image geometry and material into a mesh
+            var meshD6 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            meshD6.position.set(43,-10,1)
+            // add the image to the scene
+            scene2.add(meshD6);
+
+
+            //instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433954/drone_yviy1a.png')
+            });
+            var geometry = new THREE.PlaneGeometry(5, 5);
+            // combine our image geometry and material into a mesh
+            var meshD7 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            meshD7.position.set(90,-25,1)
+            // add the image to the scene
+            scene2.add(meshD7);
+
+
+            //instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433954/drone_yviy1a.png')
+            });
+            var geometry = new THREE.PlaneGeometry(5, 5);
+            // combine our image geometry and material into a mesh
+            var meshD8 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            meshD8.position.set(130,-53,1)
+            // add the image to the scene
+            scene2.add(meshD8);
+
+
+            //instantiate a loader
+            var loader = new THREE.TextureLoader();
+            // Load an image file into a custom material
+            var material = new THREE.MeshBasicMaterial({
+            map: loader.load('https://res.cloudinary.com/witovah/image/upload/v1678433954/drone_yviy1a.png')
+            });
+            var geometry = new THREE.PlaneGeometry(5, 5);
+            // combine our image geometry and material into a mesh
+            var meshD9 = new THREE.Mesh(geometry, material);
+            // set the position of the image mesh in the x,y,z dimensions
+            meshD9.position.set(130,-53,1)
+            // add the image to the scene
+            scene2.add(meshD9);
+
+
+
+            var dotGeometry = new THREE.Geometry();
+            dotGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+            var dotMaterial = new THREE.PointsMaterial( { size: 6, sizeAttenuation: false, color: 0xffffff} );
+            var dot1 = new THREE.Points( dotGeometry, dotMaterial );
+            dot1.name = 'Nigeria';
+            scene2.add( dot1 );
+            dot1.position.x = -164;
+            dot1.position.y = -100;
+
+            var dotGeometry = new THREE.Geometry();
+            dotGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+            var dotMaterial = new THREE.PointsMaterial( { size: 6, sizeAttenuation: false, color: 0xffffff} );
+            var dot2 = new THREE.Points( dotGeometry, dotMaterial );
+            dot2.name = 'Nigeria';
+            scene2.add( dot2 );
+            dot2.position.x = -145;
+            dot2.position.y = -75;
+
+            var dotGeometry = new THREE.Geometry();
+            dotGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+            var dotMaterial = new THREE.PointsMaterial( { size: 6, sizeAttenuation: false, color: 0xffffff} );
+            var dot3 = new THREE.Points( dotGeometry, dotMaterial );
+            dot2.name = 'Nigeria';
+            scene2.add( dot3 );
+            dot3.position.x = -117;
+            dot3.position.y = -50;
+
+            var dotGeometry = new THREE.Geometry();
+            dotGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+            var dotMaterial = new THREE.PointsMaterial( { size: 6, sizeAttenuation: false, color: 0xffffff} );
+            var dot4 = new THREE.Points( dotGeometry, dotMaterial );
+            dot2.name = 'Nigeria';
+            scene2.add( dot4 );
+            dot4.position.x = -92;
+            dot4.position.y = -34;
+
+            var dotGeometry = new THREE.Geometry();
+            dotGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+            var dotMaterial = new THREE.PointsMaterial( { size: 6, sizeAttenuation: false, color: 0xffffff} );
+            var dot5 = new THREE.Points( dotGeometry, dotMaterial );
+            dot2.name = 'Nigeria';
+            scene2.add( dot5 );
+            dot5.position.x = -64;
+            dot5.position.y = -22;
+
+            var dotGeometry = new THREE.Geometry();
+            dotGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+            var dotMaterial = new THREE.PointsMaterial( { size: 6, sizeAttenuation: false, color: 0xffffff} );
+            var dot6 = new THREE.Points( dotGeometry, dotMaterial );
+            dot2.name = 'Nigeria';
+            scene2.add( dot6 );
+            dot6.position.x = -36;
+            dot6.position.y = -15;
+
+            var dotGeometry = new THREE.Geometry();
+            dotGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+            var dotMaterial = new THREE.PointsMaterial( { size: 6, sizeAttenuation: false, color: 0xffffff} );
+            var dot7 = new THREE.Points( dotGeometry, dotMaterial );
+            dot2.name = 'Nigeria';
+            scene2.add( dot7 );
+            dot7.position.x = -13;
+            dot7.position.y = -12;
+
+
+            var dotGeometry = new THREE.Geometry();
+            dotGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+            var dotMaterial = new THREE.PointsMaterial( { size: 6, sizeAttenuation: false, color: 0xffffff} );
+            var dot8 = new THREE.Points( dotGeometry, dotMaterial );
+            dot2.name = 'Nigeria';
+            scene2.add( dot8 );
+            dot8.position.x = 23;
+            dot8.position.y = -13;
+
+
+            var dotGeometry = new THREE.Geometry();
+            dotGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+            var dotMaterial = new THREE.PointsMaterial( { size: 6, sizeAttenuation: false, color: 0xffffff} );
+            var dot9 = new THREE.Points( dotGeometry, dotMaterial );
+            dot2.name = 'Nigeria';
+            scene2.add( dot9 );
+            dot9.position.x = 65;
+            dot9.position.y = -22;
+
+
+            var dotGeometry = new THREE.Geometry();
+            dotGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+            var dotMaterial = new THREE.PointsMaterial( { size: 6, sizeAttenuation: false, color: 0xffffff} );
+            var dot10 = new THREE.Points( dotGeometry, dotMaterial );
+            dot2.name = 'Nigeria';
+            scene2.add( dot10 );
+            dot10.position.x = 107;
+            dot10.position.y = -43;
+
+
+            var dotGeometry = new THREE.Geometry();
+            dotGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+            var dotMaterial = new THREE.PointsMaterial( { size: 6, sizeAttenuation: false, color: 0xffffff} );
+            var dot11 = new THREE.Points( dotGeometry, dotMaterial );
+            dot2.name = 'Nigeria';
+            scene2.add( dot11 );
+            dot11.position.x = 149;
+            dot11.position.y = -80;
+
+
+
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line1 = new THREE.Line( geometry, material );
+            scene2.add( line1 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line2 = new THREE.Line( geometry, material );
+            scene2.add( line2 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line3 = new THREE.Line( geometry, material );
+            scene2.add( line3 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line4 = new THREE.Line( geometry, material );
+            scene2.add( line4 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line5 = new THREE.Line( geometry, material );
+            scene2.add( line5 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line6 = new THREE.Line( geometry, material );
+            scene2.add( line6 );
+
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line7 = new THREE.Line( geometry, material );
+            scene2.add( line7 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line8 = new THREE.Line( geometry, material );
+            scene2.add( line8 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line9 = new THREE.Line( geometry, material );
+            scene2.add( line9 );
+
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line10 = new THREE.Line( geometry, material );
+            scene2.add( line10 );
+
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line11 = new THREE.Line( geometry, material );
+            scene2.add( line11 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line12 = new THREE.Line( geometry, material );
+            scene2.add( line12 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line13 = new THREE.Line( geometry, material );
+            scene2.add( line13 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line14 = new THREE.Line( geometry, material );
+            scene2.add( line14 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line15 = new THREE.Line( geometry, material );
+            scene2.add( line15 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line16 = new THREE.Line( geometry, material );
+            scene2.add( line16 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line17 = new THREE.Line( geometry, material );
+            scene2.add( line17 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line18 = new THREE.Line( geometry, material );
+            scene2.add( line18 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line19 = new THREE.Line( geometry, material );
+            scene2.add( line19 );
+            
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line20 = new THREE.Line( geometry, material );
+            scene2.add( line20 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line21 = new THREE.Line( geometry, material );
+            scene2.add( line21 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line22 = new THREE.Line( geometry, material );
+            scene2.add( line22 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line23 = new THREE.Line( geometry, material );
+            scene2.add( line23 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line24 = new THREE.Line( geometry, material );
+            scene2.add( line24 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line25 = new THREE.Line( geometry, material );
+            scene2.add( line25 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line26 = new THREE.Line( geometry, material );
+            scene2.add( line26 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line27 = new THREE.Line( geometry, material );
+            scene2.add( line27 );
+
+
+            var material = new THREE.LineBasicMaterial( {
+                color: 0x00d9ff,
+                linewidth: 30,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin:  'round' //ignored by WebGLRenderer
+            } );
+            var geometry = new THREE.Geometry();
+            //Start Point [0]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            //End Point [1]
+            geometry.vertices.push(new THREE.Vector3( 0, 0) );
+            geometry.verticesNeedUpdate = true;
+            geometry.dynamic = true;
+            var line28 = new THREE.Line( geometry, material );
+            scene2.add( line28 );
+
+
+
+
+           
+
+            function connect1() {
+                line1.geometry.vertices[ 0 ].x = dot2.position.x;
+                line1.geometry.vertices[ 0 ].y = dot2.position.y;
+                line1.geometry.vertices[ 1 ].x = meshD1.position.x;
+                line1.geometry.vertices[ 1 ].y = meshD1.position.y; 
+                line1.geometry.verticesNeedUpdate = true;
+                line2.geometry.vertices[ 0 ].x = meshD1.position.x;
+                line2.geometry.vertices[ 0 ].y = meshD1.position.y; 
+                line2.geometry.vertices[ 1 ].x = dot3.position.x;
+                line2.geometry.vertices[ 1 ].y = dot3.position.y;
+                line2.geometry.verticesNeedUpdate = true; 
+            }
+
+            function connect2() {
+                line3.geometry.vertices[ 0 ].x = dot7.position.x;
+                line3.geometry.vertices[ 0 ].y = dot7.position.y;
+                line3.geometry.vertices[ 1 ].x = meshD5.position.x;
+                line3.geometry.vertices[ 1 ].y = meshD5.position.y; 
+                line3.geometry.verticesNeedUpdate = true;
+                line4.geometry.vertices[ 0 ].x = meshD5.position.x;
+                line4.geometry.vertices[ 0 ].y = meshD5.position.y; 
+                line4.geometry.vertices[ 1 ].x = dot8.position.x;
+                line4.geometry.vertices[ 1 ].y = dot8.position.y;
+                line4.geometry.verticesNeedUpdate = true;
+           } 
+
+           function connect3() {
+                line5.geometry.vertices[ 0 ].x = dot11.position.x;
+                line5.geometry.vertices[ 0 ].y = dot11.position.y; 
+                line5.geometry.vertices[ 1 ].x = mesh7.position.x;
+                line5.geometry.vertices[ 1 ].y = mesh7.position.y;
+                line5.geometry.verticesNeedUpdate = true; 
+                line6.geometry.vertices[ 0 ].x = mesh7.position.x;
+                line6.geometry.vertices[ 0 ].y = mesh7.position.y; 
+                line6.geometry.vertices[ 1 ].x = meshA3.position.x;
+                line6.geometry.vertices[ 1 ].y = meshA3.position.y; 
+                line6.geometry.verticesNeedUpdate = true;
+      
+                line7.geometry.vertices[ 0 ].x = meshA3.position.x;
+                line7.geometry.vertices[ 0 ].y = meshA3.position.y; 
+                line7.geometry.vertices[ 1 ].x = mesh3.position.x;
+                line7.geometry.vertices[ 1 ].y = mesh3.position.y; 
+                line7.geometry.verticesNeedUpdate = true;
+                line8.geometry.vertices[ 0 ].x = mesh3.position.x;
+                line8.geometry.vertices[ 0 ].y = mesh3.position.y; 
+                line8.geometry.vertices[ 1 ].x = meshD2.position.x;
+                line8.geometry.vertices[ 1 ].y = meshD2.position.y; 
+                line8.geometry.verticesNeedUpdate = true;
+
+                line9.geometry.vertices[ 0 ].x = meshD2.position.x;
+                line9.geometry.vertices[ 0 ].y = meshD2.position.y; 
+                line9.geometry.vertices[ 1 ].x = dot4.position.x;
+                line9.geometry.vertices[ 1 ].y = dot4.position.y; 
+                line9.geometry.verticesNeedUpdate = true;
+           }    
+
+
+           function connect4() { 
+                line10.geometry.vertices[ 0 ].x = dot6.position.x;
+                line10.geometry.vertices[ 0 ].y = dot6.position.y; 
+                line10.geometry.vertices[ 1 ].x = meshD4.position.x;
+                line10.geometry.vertices[ 1 ].y = meshD4.position.y; 
+                line10.geometry.verticesNeedUpdate = true;
+                line11.geometry.vertices[ 0 ].x = meshD4.position.x;
+                line11.geometry.vertices[ 0 ].y = meshD4.position.y; 
+                line11.geometry.vertices[ 1 ].x = mesh4.position.x;
+                line11.geometry.vertices[ 1 ].y = mesh4.position.y; 
+                line11.geometry.verticesNeedUpdate = true;
+                line12.geometry.vertices[ 0 ].x = mesh4.position.x;
+                line12.geometry.vertices[ 0 ].y = mesh4.position.y; 
+                line12.geometry.vertices[ 1 ].x = mesh5.position.x;
+                line12.geometry.vertices[ 1 ].y = mesh5.position.y; 
+                line12.geometry.verticesNeedUpdate = true;
+                line13.geometry.vertices[ 0 ].x = mesh5.position.x;
+                line13.geometry.vertices[ 0 ].y = mesh5.position.y; 
+                line13.geometry.vertices[ 1 ].x = meshD7.position.x;
+                line13.geometry.vertices[ 1 ].y = meshD7.position.y; 
+                line13.geometry.verticesNeedUpdate = true;
+                line14.geometry.vertices[ 0 ].x = meshD7.position.x;
+                line14.geometry.vertices[ 0 ].y = meshD7.position.y; 
+                line14.geometry.vertices[ 1 ].x = dot10.position.x;
+                line14.geometry.vertices[ 1 ].y = dot10.position.y; 
+                line14.geometry.verticesNeedUpdate = true;
+
+           }
+
+
+
+           function connect5() { 
+                line15.geometry.vertices[ 0 ].x = dot4.position.x;
+                line15.geometry.vertices[ 0 ].y = dot4.position.y; 
+                line15.geometry.vertices[ 1 ].x = meshD3.position.x;
+                line15.geometry.vertices[ 1 ].y = meshD3.position.y; 
+                line15.geometry.verticesNeedUpdate = true;
+                line16.geometry.vertices[ 0 ].x = meshD3.position.x;
+                line16.geometry.vertices[ 0 ].y = meshD3.position.y; 
+                line16.geometry.vertices[ 1 ].x = mesh3.position.x;
+                line16.geometry.vertices[ 1 ].y = mesh3.position.y; 
+                line16.geometry.verticesNeedUpdate = true;
+                line17.geometry.vertices[ 0 ].x = mesh3.position.x;
+                line17.geometry.vertices[ 0 ].y = mesh3.position.y; 
+                line17.geometry.vertices[ 1 ].x = mesh4.position.x;
+                line17.geometry.vertices[ 1 ].y = mesh4.position.y; 
+                line17.geometry.verticesNeedUpdate = true;
+                line18.geometry.vertices[ 0 ].x = mesh4.position.x;
+                line18.geometry.vertices[ 0 ].y = mesh4.position.y; 
+                line18.geometry.vertices[ 1 ].x = meshD6.position.x;
+                line18.geometry.vertices[ 1 ].y = meshD6.position.y; 
+                line18.geometry.verticesNeedUpdate = true;
+                line19.geometry.vertices[ 0 ].x = meshD6.position.x;
+                line19.geometry.vertices[ 0 ].y = meshD6.position.y; 
+                line19.geometry.vertices[ 1 ].x = dot9.position.x;
+                line19.geometry.vertices[ 1 ].y = dot9.position.y; 
+                line19.geometry.verticesNeedUpdate = true;
+           }
+
+
+
+           function connect6() { 
+                line20.geometry.vertices[ 0 ].x = dot11.position.x;
+                line20.geometry.vertices[ 0 ].y = dot11.position.y; 
+                line20.geometry.vertices[ 1 ].x = mesh7.position.x;
+                line20.geometry.vertices[ 1 ].y = mesh7.position.y; 
+                line20.geometry.verticesNeedUpdate = true;
+                line21.geometry.vertices[ 0 ].x = mesh7.position.x;
+                line21.geometry.vertices[ 0 ].y = mesh7.position.y;
+                line21.geometry.vertices[ 1 ].x = dot10.position.x;
+                line21.geometry.vertices[ 1 ].y = dot10.position.y;
+                line21.geometry.verticesNeedUpdate = true;
+            }    
+
+
+            function connect7() { 
+                line22.geometry.vertices[ 0 ].x = dot5.position.x;
+                line22.geometry.vertices[ 0 ].y = dot5.position.y; 
+                line22.geometry.vertices[ 1 ].x = meshA2.position.x;
+                line22.geometry.vertices[ 1 ].y = meshA2.position.y; 
+                line22.geometry.verticesNeedUpdate = true;
+                line23.geometry.vertices[ 0 ].x = meshA2.position.x;
+                line23.geometry.vertices[ 0 ].y = meshA2.position.y;
+                line23.geometry.vertices[ 1 ].x = dot8.position.x;
+                line23.geometry.vertices[ 1 ].y = dot8.position.y;
+                line23.geometry.verticesNeedUpdate = true;
+            } 
+
+
+            function connect8() { 
+                line24.geometry.vertices[ 0 ].x = dot1.position.x;
+                line24.geometry.vertices[ 0 ].y = dot1.position.y; 
+                line24.geometry.vertices[ 1 ].x = mesh2.position.x;
+                line24.geometry.vertices[ 1 ].y = mesh2.position.y; 
+                line24.geometry.verticesNeedUpdate = true;
+                line25.geometry.vertices[ 0 ].x = mesh2.position.x;
+                line25.geometry.vertices[ 0 ].y = mesh2.position.y;
+                line25.geometry.vertices[ 1 ].x = mesh3.position.x;
+                line25.geometry.vertices[ 1 ].y = mesh3.position.y;
+                line25.geometry.verticesNeedUpdate = true;
+                line26.geometry.vertices[ 0 ].x = mesh3.position.x;
+                line26.geometry.vertices[ 0 ].y = mesh3.position.y;
+                line26.geometry.vertices[ 1 ].x = mesh4.position.x;
+                line26.geometry.vertices[ 1 ].y = mesh4.position.y;
+                line26.geometry.verticesNeedUpdate = true;
+                line27.geometry.vertices[ 0 ].x = mesh4.position.x;
+                line27.geometry.vertices[ 0 ].y = mesh4.position.y;
+                line27.geometry.vertices[ 1 ].x = mesh5.position.x;
+                line27.geometry.vertices[ 1 ].y = mesh5.position.y;
+                line27.geometry.verticesNeedUpdate = true;
+                line28.geometry.vertices[ 0 ].x = mesh5.position.x;
+                line28.geometry.vertices[ 0 ].y = mesh5.position.y;
+                line28.geometry.vertices[ 1 ].x = dot9.position.x;
+                line28.geometry.vertices[ 1 ].y = dot9.position.y;
+                line28.geometry.verticesNeedUpdate = true;
+            } 
+
+                
+
+
+           
+
+           function disconnect1() {
+                line1.geometry.vertices[ 0 ].x = 0;
+                line1.geometry.vertices[ 0 ].y = 0;
+                line1.geometry.vertices[ 1 ].x = 0;
+                line1.geometry.vertices[ 1 ].y = 0;
+                line1.geometry.verticesNeedUpdate = true;
+                line2.geometry.vertices[ 0 ].x = 0;
+                line2.geometry.vertices[ 0 ].y = 0; 
+                line2.geometry.vertices[ 1 ].x = 0;
+                line2.geometry.vertices[ 1 ].y = 0;
+                line2.geometry.verticesNeedUpdate = true;
+           }    
+
+
+           function disconnect2() {
+                line3.geometry.vertices[ 0 ].x = 0;
+                line3.geometry.vertices[ 0 ].y = 0;
+                line3.geometry.vertices[ 1 ].x = 0;
+                line3.geometry.vertices[ 1 ].y = 0; 
+                line3.geometry.verticesNeedUpdate = true;
+                line4.geometry.vertices[ 0 ].x = 0;
+                line4.geometry.vertices[ 0 ].y = 0; 
+                line4.geometry.vertices[ 1 ].x = 0;
+                line4.geometry.vertices[ 1 ].y = 0;
+                line4.geometry.verticesNeedUpdate = true;
+           }
+
+           function disconnect3() {
+                line5.geometry.vertices[ 0 ].x = 0;
+                line5.geometry.vertices[ 0 ].y = 0; 
+                line5.geometry.vertices[ 1 ].x = 0;
+                line5.geometry.vertices[ 1 ].y = 0;
+                line5.geometry.verticesNeedUpdate = true; 
+                line6.geometry.vertices[ 0 ].x = 0;
+                line6.geometry.vertices[ 0 ].y = 0; 
+                line6.geometry.vertices[ 1 ].x = 0;
+                line6.geometry.vertices[ 1 ].y = 0; 
+                line6.geometry.verticesNeedUpdate = true;
+
+                line7.geometry.vertices[ 0 ].x = 0;
+                line7.geometry.vertices[ 0 ].y = 0; 
+                line7.geometry.vertices[ 1 ].x = 0;
+                line7.geometry.vertices[ 1 ].y = 0; 
+                line7.geometry.verticesNeedUpdate = true;
+
+                line8.geometry.vertices[ 0 ].x = 0;
+                line8.geometry.vertices[ 0 ].y = 0; 
+                line8.geometry.vertices[ 1 ].x = 0;
+                line8.geometry.vertices[ 1 ].y = 0; 
+                line8.geometry.verticesNeedUpdate = true;
+                line9.geometry.vertices[ 0 ].x = 0;
+                line9.geometry.vertices[ 0 ].y = 0; 
+                line9.geometry.vertices[ 1 ].x = 0;
+                line9.geometry.vertices[ 1 ].y = 0; 
+                line9.geometry.verticesNeedUpdate = true;
+           }
+
+        
+           function disconnect4() {
+                line10.geometry.vertices[ 0 ].x = 0;
+                line10.geometry.vertices[ 0 ].y = 0; 
+                line10.geometry.vertices[ 1 ].x = 0;
+                line10.geometry.vertices[ 1 ].y = 0; 
+                line10.geometry.verticesNeedUpdate = true;
+                line11.geometry.vertices[ 0 ].x = 0;
+                line11.geometry.vertices[ 0 ].y = 0; 
+                line11.geometry.vertices[ 1 ].x = 0;
+                line11.geometry.vertices[ 1 ].y = 0; 
+                line11.geometry.verticesNeedUpdate = true;
+                line12.geometry.vertices[ 0 ].x = 0;
+                line12.geometry.vertices[ 0 ].y = 0; 
+                line12.geometry.vertices[ 1 ].x = 0;
+                line12.geometry.vertices[ 1 ].y = 0; 
+                line12.geometry.verticesNeedUpdate = true;
+                line13.geometry.vertices[ 0 ].x = 0;
+                line13.geometry.vertices[ 0 ].y = 0; 
+                line13.geometry.vertices[ 1 ].x = 0;
+                line13.geometry.vertices[ 1 ].y = 0; 
+                line13.geometry.verticesNeedUpdate = true;
+                line14.geometry.vertices[ 0 ].x = 0;
+                line14.geometry.vertices[ 0 ].y = 0; 
+                line14.geometry.vertices[ 1 ].x = 0;
+                line14.geometry.vertices[ 1 ].y = 0; 
+                line14.geometry.verticesNeedUpdate = true;
+           }
+
+
+           function disconnect5() { 
+                line15.geometry.vertices[ 0 ].x = 0;
+                line15.geometry.vertices[ 0 ].y = 0; 
+                line15.geometry.vertices[ 1 ].x = 0;
+                line15.geometry.vertices[ 1 ].y = 0; 
+                line15.geometry.verticesNeedUpdate = true;
+                line16.geometry.vertices[ 0 ].x = 0;
+                line16.geometry.vertices[ 0 ].y = 0; 
+                line16.geometry.vertices[ 1 ].x = 0;
+                line16.geometry.vertices[ 1 ].y = 0; 
+                line16.geometry.verticesNeedUpdate = true;
+                line17.geometry.vertices[ 0 ].x = 0;
+                line17.geometry.vertices[ 0 ].y = 0;
+                line17.geometry.vertices[ 1 ].x = 0;
+                line17.geometry.vertices[ 1 ].y = 0; 
+                line17.geometry.verticesNeedUpdate = true;
+                line18.geometry.vertices[ 0 ].x = 0;
+                line18.geometry.vertices[ 0 ].y = 0; 
+                line18.geometry.vertices[ 1 ].x = 0;
+                line18.geometry.vertices[ 1 ].y = 0; 
+                line18.geometry.verticesNeedUpdate = true;
+                line19.geometry.vertices[ 0 ].x = 0;
+                line19.geometry.vertices[ 0 ].y = 0; 
+                line19.geometry.vertices[ 1 ].x = 0;
+                line19.geometry.vertices[ 1 ].y = 0; 
+                line19.geometry.verticesNeedUpdate = true;
+           }
+
+
+           function disconnect6() { 
+                line20.geometry.vertices[ 0 ].x = 0;
+                line20.geometry.vertices[ 0 ].y = 0; 
+                line20.geometry.vertices[ 1 ].x = 0;
+                line20.geometry.vertices[ 1 ].y = 0; 
+                line20.geometry.verticesNeedUpdate = true;
+                line21.geometry.vertices[ 0 ].x = 0;
+                line21.geometry.vertices[ 0 ].y = 0;
+                line21.geometry.vertices[ 1 ].x = 0;
+                line21.geometry.vertices[ 1 ].y = 0;
+                line21.geometry.verticesNeedUpdate = true;
+            }  
+
+
+            function disconnect7() { 
+                line22.geometry.vertices[ 0 ].x = 0;
+                line22.geometry.vertices[ 0 ].y = 0; 
+                line22.geometry.vertices[ 1 ].x = 0;
+                line22.geometry.vertices[ 1 ].y = 0; 
+                line22.geometry.verticesNeedUpdate = true;
+                line23.geometry.vertices[ 0 ].x = 0;
+                line23.geometry.vertices[ 0 ].y = 0;
+                line23.geometry.vertices[ 1 ].x = 0;
+                line23.geometry.vertices[ 1 ].y = 0;
+                line23.geometry.verticesNeedUpdate = true;
+            } 
+
+
+            function disconnect8() { 
+                line24.geometry.vertices[ 0 ].x = 0;
+                line24.geometry.vertices[ 0 ].y = 0; 
+                line24.geometry.vertices[ 1 ].x = 0;
+                line24.geometry.vertices[ 1 ].y = 0; 
+                line24.geometry.verticesNeedUpdate = true;
+                line25.geometry.vertices[ 0 ].x = 0;
+                line25.geometry.vertices[ 0 ].y = 0;
+                line25.geometry.vertices[ 1 ].x = 0;
+                line25.geometry.vertices[ 1 ].y = 0;
+                line25.geometry.verticesNeedUpdate = true;
+                line26.geometry.vertices[ 0 ].x = 0;
+                line26.geometry.vertices[ 0 ].y = 0;
+                line26.geometry.vertices[ 1 ].x = 0;
+                line26.geometry.vertices[ 1 ].y = 0;
+                line26.geometry.verticesNeedUpdate = true;
+                line27.geometry.vertices[ 0 ].x = 0;
+                line27.geometry.vertices[ 0 ].y = 0;
+                line27.geometry.vertices[ 1 ].x = 0;
+                line27.geometry.vertices[ 1 ].y = 0;
+                line27.geometry.verticesNeedUpdate = true;
+                line28.geometry.vertices[ 0 ].x = 0;
+                line28.geometry.vertices[ 0 ].y = 0;
+                line28.geometry.vertices[ 1 ].x = 0;
+                line28.geometry.vertices[ 1 ].y = 0;
+                line28.geometry.verticesNeedUpdate = true;
+            } 
+
+           
+           function link() { 
+                connect1();
+                var audio = new Audio('https://steveakang.github.io/starmesh/sound/btn.mp3');
+                setTimeout(function() { connect1(); }, 2000);
+                setTimeout(function() { audio.play(); }, 3000);
+                setTimeout(function() { connect2(); }, 4000);
+                setTimeout(function() { audio.play(); }, 5000);
+                setTimeout(function() { connect3(); disconnect1(); }, 6000);
+                setTimeout(function() { audio.play(); }, 7000);
+                setTimeout(function() { connect4(); disconnect2();}, 8000);
+                setTimeout(function() { audio.play(); }, 9000);
+                setTimeout(function() { connect5(); disconnect3();  }, 10000);
+                setTimeout(function() { audio.play(); }, 11000);
+                setTimeout(function() { connect6(); disconnect4(); }, 12000);
+                setTimeout(function() { audio.play(); }, 13000);
+                setTimeout(function() { connect7(); disconnect5(); }, 14000);
+                setTimeout(function() { audio.play(); }, 15000);
+                setTimeout(function() { connect8(); disconnect6(); }, 16000);
+                setTimeout(function() { audio.play(); }, 17000);
+                setTimeout(function() { disconnect7(); }, 18000);
+                setTimeout(function() { audio.play(); }, 19000);
+                setTimeout(function() { disconnect8(); }, 20000);
+           }
+            var s;
+            
+            function flash() {
+                    s = setInterval(function() { link();  }, 21000);
+            }
+            function stopflash() {
+              clearInterval(s);
+                    
+            }
+            setTimeout(function() { link();  }, 1000);
+            flash();
+
+
+
+
+
+
+
+
+
+
+			const animate = function () {
+				requestAnimationFrame( animate );
+
+				// circle.rotation.z += 0.001;
+
+                mesh1.rotation.z -= 0.004;
+                mesh1.position.x += 0.005;
+                mesh1.position.y += 0.009;
+
+                mesh2.rotation.z += 0.004;
+                mesh2.position.x -= 0.005;
+                mesh2.position.y -= 0.002;
+                
+                mesh3.rotation.z -= 0.004;
+                mesh3.position.x -= 0.005;
+                // mesh3.position.y += 0.019;
+
+                mesh4.rotation.z += 0.004;
+                mesh4.position.x -= 0.005;
+                mesh4.position.y -= 0.0002;
+
+                mesh5.rotation.z -= 0.004; 
+                mesh5.position.x -= 0.005;
+                mesh5.position.y += 0.001;
+                
+                mesh6.rotation.z += 0.004;
+                mesh6.position.x -= 0.005;
+                mesh6.position.y += 0.003;
+
+                mesh7.rotation.z -= 0.004;
+                mesh7.position.x -= 0.005;
+                mesh7.position.y += 0.003;
+
+                mesh8.rotation.z -= 0.004;
+                mesh8.position.x -= 0.005;
+                mesh8.position.y += 0.0038;
+
+                mesh9.rotation.z -= 0.004;
+                mesh9.position.x -= 0.005;
+                mesh9.position.y += 0.0038;
+
+                
+                meshA1.rotation.z -= 0.001;
+                meshA1.position.x += 0.005;
+                // meshA1.position.y -= 0.001;
+
+                meshA2.rotation.z += 0.001;
+                meshA2.position.x += 0.005;
+                // meshA2.position.y -= 0.019;
+
+                meshA3.rotation.z -= 0.001;
+                meshA3.position.x += 0.005;
+
+                meshA4.rotation.z += 0.001;
+                meshA4.position.x += 0.005;
+
+                // meshG1.rotation.z -= 0.0001;
+
+                // meshG2.rotation.z -= 0.0001;
+
+                // meshG3.rotation.z -= 0.0001;
+                
+
+				renderer.clear();
+                renderer.render( scene, camera );
+                renderer.clearDepth();
+                renderer.render( scene2, camera );
+			};
+
+			animate();
+		</script>
+	</body>
+</html>
